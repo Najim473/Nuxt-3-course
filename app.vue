@@ -1,29 +1,23 @@
 <template>
-  <!-- <Home-Welcome /> -->
-  <!-- <HomeWelcome /> -->
-  <!-- <Counter /> -->
-  <!-- Dynamic Components  -->
-  <!-- <component :is="Counter"/> -->
-  <button @click="toggle">Toggle</button>
-  <!-- way 01 -->
-  <!-- <component :is="myComponent"/> -->
-  <!-- way 02  -->
-  <div v-if="myComponent === 'welcome'">
-    <HomeWelcome />
-  </div>
-  <counter />
+  <a :style="{ cursor: 'pointer' }" @click="view('home')">Home</a>
+  <br />
+  <br />
+  <a :style="{ cursor: 'pointer' }" @click="view('counter')">Counter</a>
+  <br />
+  <br />
+  <!-- <HomeWelcome v-if="page === 'home'" />
+  <br />
+  <br />
+  <Counter v-if="page === 'counter'" /> -->
+  <!-- It's will work when only need  -->
+  <LazyHomeWelcome v-if="page === 'home'" />
+  <br />
+  <br />
+  <LazyCounter v-if="page === 'counter'" />
 </template>
 <script setup>
-// const Counter = resolveComponent("Counter")
-// Way 01
-// const myComponent = ref(resolveComponent("Counter"));
-// Way 02
-const myComponent = ref("counter");
-function toggle() {
-  // Way 01
-  // console.log(myComponent.value)
-  // myComponent.value = resolveComponent("Home-Welcome")
-  // Way 02
-  myComponent.value = "welcome";
+const page = ref("home");
+function view(name) {
+  page.value = name;
 }
 </script>
