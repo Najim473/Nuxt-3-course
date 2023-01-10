@@ -1,10 +1,8 @@
 <template>
-  <div>Hello World</div>
   <button @click="increment">Increment</button>
   <p>{{ count }}</p>
   <button @click="decrement">Decrement</button>
 </template>
-
 <script>
 export default {
   data() {
