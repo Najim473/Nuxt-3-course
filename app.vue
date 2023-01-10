@@ -1,10 +1,26 @@
 <template>
     <!-- <Home-Welcome /> -->
-  <HomeWelcome />
+  <!-- <HomeWelcome /> -->
   <!-- <Counter /> -->
   <!-- Dynamic Components  -->
-  <component :is="Counter"/>
+  <!-- <component :is="Counter"/> -->
+  <button @click="toggle">Toggle</button>
+  <!-- way 01 -->
+  <!-- <component :is="myComponent"/> -->
+  <!-- way 02  -->
+  
 </template>
 <script setup>
-const Counter = resolveComponent("Counter")
+// const Counter = resolveComponent("Counter")
+// Way 01
+// const myComponent = ref(resolveComponent("Counter"));
+// Way 02 
+const myComponent = ref("counter");
+function toggle (){
+  // Way 01 
+  // console.log(myComponent.value)
+  // myComponent.value = resolveComponent("Home-Welcome")
+  // Way 02 
+  myComponent.value = 'toggle';
+}
 </script>
