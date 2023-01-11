@@ -12,6 +12,7 @@
   <!-- It's will work when only need  -->
   <LazyHomeWelcome v-if="page === 'home'" />
   <br />
+  <NuxtPage/>
   <br />
   <LazyCounter v-if="page === 'counter'" />
 </template>
