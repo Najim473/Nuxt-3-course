@@ -1,5 +1,8 @@
 <template>
-    <h1>This is about page</h1>
-    <NuxtLink to="/">Home</NuxtLink>
-    <NuxtLink to="about">About</NuxtLink>
+  <h1>This is about page</h1>
 </template>
+<script>
+definePageMeta({
+  layout: false,
+});
+</script>
